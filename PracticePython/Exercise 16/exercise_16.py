@@ -15,9 +15,9 @@ from PracticePython.functions import get_number
 
 
 def password_generator():
-    password_lenght = get_number("Podaj liczbę znaków Twojego hasła (co najmniej 8 znaków): ")
-    while password_lenght < 8:
-        password_lenght = get_number("Podaj liczbę większą niż 7!: ")
+    password_length = get_number("Podaj liczbę znaków Twojego hasła (co najmniej 8 znaków): ")
+    while password_length < 8:
+        password_length = get_number("Podaj liczbę większą niż 7!: ")
 
     choices = [string.ascii_lowercase, string.ascii_uppercase, string.punctuation, string.digits]
     password_parts = []
@@ -25,7 +25,7 @@ def password_generator():
     for i in choices:
         password_parts.append(random.choice(i))
 
-    for i in range(password_lenght-4):
+    for i in range(password_length-4):
         password_parts.append(random.choice(random.choice(choices)))
 
     random.shuffle(password_parts)
