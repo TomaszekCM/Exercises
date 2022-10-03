@@ -4,7 +4,7 @@
 # (Hint: The Fibonnaci seqence is a sequence of numbers where the next number in the sequence
 # is the sum of the previous two numbers in the sequence. The sequence looks like this: 1, 1, 2, 3, 5, 8, 13, …)
 
-from PracticePython.funkcions import get_number
+from PracticePython.functions import get_number
 
 how_many_numbers = get_number("Podaj liczbę elementów ciągu Fibonacciego, którą chcesz wyświetlić: ")
 
