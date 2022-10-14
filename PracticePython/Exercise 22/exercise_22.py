@@ -28,5 +28,28 @@ def how_many_names(file):
         print("Imię ", i, " występuje ", n, "razy")
 
 
+def how_many_categories():
+    categories = []
+    cat2 = {}
+    with open("Training_01.txt", 'r') as open_file:
+        line = open_file.readline()
+        while line:
+            cat_name = line.split("/")[2]
+            if cat_name not in categories:
+                categories.append(line.split("/")[2])
+
+            if cat_name not in cat2:
+                cat2[cat_name] = 1
+            else:
+                cat2[cat_name] += 1
+
+            line = open_file.readline()
+
+    return cat2, f"W artykule jest {len(categories)} kategorii"
+
 if __name__ == "__main__":
     how_many_names('nameslist.txt')
+    print()
+    print("----------------------------------")
+    print()
+    print(how_many_categories()[1])
