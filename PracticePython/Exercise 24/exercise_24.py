@@ -35,7 +35,7 @@ def draw_board(x, y):
 
 
 def users_board():
-    x = input("Podaj liczbę kolumn: ")
+    x = input("Podaj liczbę wierszy: ")
     while x.isnumeric() == False:
         x = input("LICZBĘ: ")
 
