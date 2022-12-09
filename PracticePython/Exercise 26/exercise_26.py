@@ -56,13 +56,13 @@ def tic_tac_toe_winner(board):
     # now we check all colls and rows
     for row in board:
         if len(set(row)) == 1:
-            if row[0] != 0:
+            if str(row[0]) != str(0):
                 return f"wygrywa gracz {row[0]}"
 
     transposed_board = np.transpose(board)
     for col in transposed_board:
         if len(set(col)) == 1:
-            if col[0] != 0:
+            if str(col[0]) != str(0):
                 return f"wygrywa gracz {col[0]}"
 
     # we also have to check diagonals
@@ -168,17 +168,22 @@ first_wins1 = [[1, 1, 2],
 	[2, 1, 0],
 	[2, 1, 0]]
 
-second_wins2 = [[1, 2, 2],
-	[2, 2, 2],
-	[1, 1, 1]]
+zeroes = [[0, 0, 0],
+	[0, 0, 0],
+	[0, 0, 0]]
+
+second_wins2 = [["X", 2, 2],
+	["X", 2, 2],
+	["X", 1, 1]]
 
 second_wins3 = [[2, 2, 1, 1],
 	[2, 2, 1, 1],
 	[1, 0, 2, 2],
     [1, 2, 1, 1]]
 
+board = [["X", 0, 0], [0, 0, 0], [0, 0, 0]]
 
 if __name__ == "__main__":
-    print(tic_tac_toe_winner(no_winner))
+    print(tic_tac_toe_winner(board))
 
-    print(who_wins(no_winner))
+    # print(who_wins(no_winner))

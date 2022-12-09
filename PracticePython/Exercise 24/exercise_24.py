@@ -31,15 +31,33 @@ def draw_board(x, y):
     board = hyphens * x + "\n"
     for i in range(y):
         board += slash * x + "|" + "\n" + hyphens * x + "\n"
+
     return board
 
 
+def draw_board2(x, y, board):
+    hyphens = " ---"
+    slash = "|   "
+    row = ""
+    new_board = hyphens * x + "\n"
+
+    for row in board:
+        for col in row:
+            if col == 0:
+                new_board += "|   "
+            else:
+                new_board += f"| {col} "
+        new_board +="|" + "\n" + hyphens * x + "\n"
+
+    return new_board
+
+
 def users_board():
-    x = input("Podaj liczbę wierszy: ")
+    x = input("Podaj liczbę kolumn: ")
     while x.isnumeric() == False:
         x = input("LICZBĘ: ")
 
-    y = input("Podaj liczbę kolumn: ")
+    y = input("Podaj liczbę wierszy: ")
     while y.isnumeric() == False:
         y = input("LICZBĘ: ")
 
@@ -48,5 +66,9 @@ def users_board():
     return draw_board(x, y)
 
 
+
 if __name__ == "__main__":
-    print(users_board())
+    board = [["X", 0, 0], ["X", "O", 0], ["X", 0, 0]]
+    print(draw_board2(3, 3, board))
+    # print()
+    # print(users_board())
